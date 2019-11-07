@@ -1,0 +1,48 @@
+get method
+<?php if(isset($_GET["name"])){ echo " Welcome," . $_GET["name"] . " "; } ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     
+ 
+ 
+<form method="get" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <label for="inputName">Name:</label>
+        <input type="text" name="name" id="inputName">
+        <input type="submit" value="Submit">
+    </form>
+ 
+ 
+ 
+</body>
+</html>
+-----------------------post method
+<?php if(isset($_POST["name"])){ echo " Welcome," . $_POST["name"] . " "; } ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     
+ 
+ 
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <label for="inputName">Name:</label>
+        <input type="text" name="name" id="inputName">
+        <label for="password">password:</label>
+        <input type="password" name="pass">
+        <input type="submit" value="Submit">
+    </form>
+ 
+ 
+ 
+</body>
+</html>

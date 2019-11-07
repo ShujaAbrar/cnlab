@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+int path[20],ind=0,visited[20];
+void find_path(int graph[20][20],int s,int d,int n)
+{
+ int i=0;
+ visited[s]=1;
+ if(s==n)
+  return;
+ if(s==d){
+ printf("path selected is:");
+ for(i=0;i<ind;i++)
+  printf("%d->",path[i]);
+ printf("%d",d);
+ exit(0); }
+ path[ind++]=s;
+ for(i=0;i<n;i++)  {
+  if(graph[s][i]==1&&visited[i]==0)
+   find_path(graph,i,d,n); }
+}
+
+void main()
+{
+ int graph[20][20],i,j,n,s,d;
+ clrscr();
+ printf("enter the number of vertices:");
+ scanf("%d",&n);
+ printf("enter the adjacency matrix:\n");
+ for(i=0;i<n;i++)
+ for(j=0;j<n;j++)
+ scanf("%d",&graph[i][j]);
+ printf("enter the source node:");
+ scanf("%d",&s);
+ printf("enter the destination node:");
+ scanf("%d",&d);
+ find_path(graph,s,d,n);
+ getch();
+}
+/*output:
+enter the number of vertices:4
+enter the adjacency matrix:                                                     
+0 1 0 0                                                                         
+1 0 1 0                                                                         
+0 1 0 1                                                                         
+0 0 1 0                                                                         
+enter the source node:0                                                         
+enter the destination node:3                                                    
+path selected is:0->1->2->3*/
